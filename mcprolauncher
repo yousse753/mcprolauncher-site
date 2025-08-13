@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCProLauncher</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* Body & Background */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(-45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+    background-size: 1400% 1400%;
+    animation: rainbowBG 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  @keyframes rainbowBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  /* Container Card */
+  .container {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 50px 30px;
+    text-align: center;
+    width: 380px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .container:hover {
+    transform: scale(1.03);
+  }
+
+  h1 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff;
+  }
+
+  select, button {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    outline: none;
+  }
+
+  /* Version Selector */
+  select {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  }
+  select:hover {
+    background: rgba(255,255,255,0.35);
+  }
+
+  /* Buttons */
+  button {
+    background: linear-gradient(90deg, #ff416c, #ff4b2b, #ffeb3b, #00e676, #2196f3, #9c27b0);
+    background-size: 300% 300%;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: rainbowBtn 6s ease infinite;
+  }
+
+  button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  }
+
+  @keyframes rainbowBtn {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  /* Video Image */
+  .video-img {
+    margin-top: 25px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #fff;
+  }
+
+  .video-img img {
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .video-img img:hover {
+    transform: scale(1.08);
+  }
+
+  .video-img span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff0, 0 0 20px #f0f, 0 0 30px #0ff;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>MCProLauncher</h1>
+
+  <select id="versionSelector">
+    <option value="">Select Version</option>
+    <option value="https://eaglercraft.com/mc/1.12.2/">1.12.2</option>
+    <option value="https://eaglercraft.com/mc/1.8.8/">1.8.8</option>
+    <option value="https://eaglercraft.com/mc/1.5.2/">1.5.2</option>
+  </select>
+
+  <button id="skinBtn">Change Skin</button>
+  <button id="loginBtn">Login</button>
+
+  <div class="video-img" id="videoBtn">
+    <img src="https://img.youtube.com/vi/MmB9b5njVbA/0.jpg" alt="Minecraft Video">
+    <span>Minecraft</span>
+  </div>
+</div>
+
+<script>
+  // Version selector
+  document.getElementById('versionSelector').addEventListener('change', function() {
+    if(this.value) window.open(this.value, '_blank');
+  });
+
+  // Skin button
+  document.getElementById('skinBtn').addEventListener('click', function() {
+    window.open('https://skinsmc.org/', '_blank');
+  });
+
+  // Login button
+  document.getElementById('loginBtn').addEventListener('click', function() {
+    window.open('https://eaglercraftz.pages.dev/login', '_blank');
+  });
+
+  // Video button
+  document.getElementById('videoBtn').addEventListener('click', function() {
+    window.open('https://www.youtube.com/watch?v=MmB9b5njVbA', '_blank');
+  });
+</script>
+
+</body>
+</html>
